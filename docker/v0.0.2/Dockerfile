@@ -136,7 +136,7 @@ RUN rm -vfR /var/lib/apt/lists/* \
     && apt-get install -y -q --no-install-recommends git \
     && mkdir -p /ent \
     && cd /ent \
-    && git clone https://github.com/amyhegarty/docker-fsl-fdt.git
+    && git clone https://github.com/intermountainneuroimaging/dti-preproc.git
 
 ## replace fsl_sub from basic install with custom command
 # RUN mv /ent/docker-fsl-fdt/code/fslutils/fsl6.0.3/fsl_sub /opt/fsl-6.0.3/bin/fsl_sub \
