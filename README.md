@@ -67,12 +67,6 @@ $ docker run -ti --rm \
     amhe4269/fsl-fdt:<latest-version> /data /out --participant-label=[ID] [OPTIONS] 
 ```
 
-## Docker examples
-
-The canonical examples install ANTs version 2.3.1 on Debian 9 (Stretch).
-
-_Note_: Do not use the `-t/--tty` flag with `docker run` or non-printable characters will be a part of the output (see [moby/moby#8513 (comment)](https://github.com/moby/moby/issues/8513#issuecomment-216191236)).
-
 ### Docker
 Run the Diffusion Toolbox pipleine using docker. We first mount appropriate volumes (external directories) and assign relevant arguments including participant-label.
 ```shell
