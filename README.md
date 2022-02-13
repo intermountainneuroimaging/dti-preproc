@@ -35,21 +35,25 @@ usage: fsl-fdt [-h] [-i INPUT_PATH] [-o OUTPUT_PATH]
                [--participant-label= ID]
                [--work-dir= SCRATCH_PATH]
                [--clean-work-dir= {TRUE,FALSE}]
-               [--concat-preproc= {TRUE,FALSE}]
+               [--concat-before-preproc= {TRUE,FALSE}]
                [--run-qc= {TRUE,FALSE}]
-               [--studyname= ACCOUNT]
+               [--use-repol][--ignore-preproc]
+               [--run-tensor-fit][--run-bedpostx]
 
 optional arguments:
   -h, --help                          show this help message and exit
-  -i INPUT_PATH, --in= INPUT_PATH     (required) BIDS input directory path
-  -o OUTPUT_PATH, --out= OUTPUT_PATH  (required) BIDS output / derivatives directory 
-  --participant-label= ID             (required) participant label for processing
-  --work-dir= SCARTCH_PATH            select working directory for analysis (DEFAULT: /scratch)
-  --clean-work-dir= {TRUE,FALSE}      flag used to define if working directory should be cleared after execution (DEFAULT: TRUE)
-  --concat-preproc= {TRUE,FALSE}      flag used to select if all dwi images should be concatinated before correction (DEFAULT: FALSE)
-  --run-qc= {TRUE,FALSE}              flag set to include EDDY_QC (DEFAULT: TRUE)
-  --run-tensor-fit                    add flag to run tensor-fit processing on preprocessed images
-  --run-bedpostx                      add flag to run bedpostx tractography processing on preprocessed images (default settings used for analysis)
+  -i INPUT_PATH, --in= INPUT_PATH        (required) BIDS input directory path
+  -o OUTPUT_PATH, --out= OUTPUT_PATH     (required) BIDS output / derivatives directory 
+  --participant-label= ID                (required) participant label for processing
+  --work-dir= SCARTCH_PATH               select working directory for analysis (DEFAULT: /scratch)
+  --clean-work-dir= {TRUE,FALSE}         flag used to define if working directory should be cleared after execution (DEFAULT: TRUE)
+  --concat-before-preproc= {TRUE,FALSE}  flag used to select if all dwi images should be concatinated before correction (DEFAULT: FALSE)
+  --run-qc= {TRUE,FALSE}                 flag set to include EDDY_QC (DEFAULT: TRUE)
+  --use-repol                            add flag correct outliers in eddy (see more: fsl/eddy user guide)
+  --ignore-preproc                       add flag to ignore preprocessing steps, and skip to running tensor-fit or bedpostx. Only use if preprocessing is already   
+                                          completed (e.g. qsiprep outputs)  
+  --run-tensor-fit                       add flag to run tensor-fit processing on preprocessed images
+  --run-bedpostx                         add flag to run bedpostx tractography processing on preprocessed images (default settings used for analysis)
   
 ** OpenMP used for parellelized execution of eddy. Multiple cores (CPUs) are recommended (4 cpus for each dwi scan).
 
