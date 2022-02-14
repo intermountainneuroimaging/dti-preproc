@@ -187,7 +187,7 @@ def main(argv):
     # get participant bids path:
     db = custombids.data(entry)
 
-    if not ignore_preproc:
+    if not entry.ignore_preproc:
       # pipeline: (1) topup, (2) eddy, (3) dtifit
       if not os.path.exists(entry.wd + '/topup/topup_b0_iout.nii.gz'):
           topup.run(db,entry)
