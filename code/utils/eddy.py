@@ -180,7 +180,7 @@ def concat_eddy_results(layout,entry):
   outqc   = outfile.replace('.nii.gz','.qc')
   outbase   = outfile.replace('_dwi.nii.gz','')
   
-  if os.path.exists(entry.outputs + '/FDT/' + outref):
+  if not os.path.exists(entry.outputs + '/FDT/' + outref):
 
     print('Concatenating dwi images...')
   
