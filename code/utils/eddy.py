@@ -470,7 +470,7 @@ def generate_confounds_file(entry,outbase):
 
   df=pd.DataFrame()
   for f in sorted(glob.glob(entry.wd + '/eddy_dwi*/eddy_unwarped_images.eddy_outlier_report')):
-    d2=pd.read_csv(f,header=None,sep=",")  
+    d2=pd.read_csv(f,header=None,sep="\t")  
     d1=pd.DataFrame([f])
     d = pd.concat([d1,d2],axis=0)
     df = pd.concat([df,d],axis=0)
